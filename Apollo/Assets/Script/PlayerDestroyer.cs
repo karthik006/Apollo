@@ -20,7 +20,9 @@ public class PlayerDestroyer : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            Debug.Break();
+            //Debug.Log("Time : " + CameraController.incr);
+            //Debug.Break();
+            CameraController.playerHealth = 0;
             return;
         }
     }

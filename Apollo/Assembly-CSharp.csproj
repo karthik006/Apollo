@@ -60,10 +60,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\Apollo.cs" />
     <Compile Include="Assets\Script\CameraController.cs" />
     <Compile Include="Assets\Script\DestroyerScript.cs" />
+    <Compile Include="Assets\Script\HomeScript.cs" />
+    <Compile Include="Assets\Script\LoginScript.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\PlayerDestroyer.cs" />
+    <Compile Include="Assets\Script\SpawnScript.cs" />
+    <Compile Include="Assets\Script\SpikeScript.cs" />
+    <None Include="Assets\Data\login.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Karthik/Apollo/Apollo/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

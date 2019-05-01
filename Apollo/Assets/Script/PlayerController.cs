@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private int health;
-
     [HideInInspector] public bool jump = false;
     [HideInInspector] public bool doubleJump = false;
 
@@ -32,8 +30,6 @@ public class PlayerController : MonoBehaviour
 
         light = GetComponent<Light>();
 
-        health = 100;
-
         i = 0;
         colors = new Color[] { Color.yellow, Color.red, Color.blue };
     }
@@ -43,7 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         grounded = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
 
-        if (grounded)
+        if (grounded || i!=2)
             doubleJump = false;
 
         if(Input.GetButtonDown("Jump"))
@@ -51,7 +47,8 @@ public class PlayerController : MonoBehaviour
             if (grounded)
             {
                 jump = true;
-                doubleJump = true;
+                if(i == 2)
+                    doubleJump = true;
             }
             else if (!grounded && doubleJump)
             {
