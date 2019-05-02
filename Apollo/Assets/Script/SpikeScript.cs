@@ -44,6 +44,6 @@ public class SpikeScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        CameraController.playerHealth = 0;
+        CameraController.playerHealth -= 100;
     }
 }

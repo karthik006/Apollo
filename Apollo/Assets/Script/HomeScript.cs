@@ -11,7 +11,7 @@ public class HomeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        displayName.text = Apollo.CurrentUser;
+        displayName.text = "Welcome, " + Apollo.CurrentUser + "\nScore: " + Apollo.Coins;
     }
 
     // Update is called once per frame
@@ -27,7 +27,7 @@ public class HomeScript : MonoBehaviour
 
     public void Shop()
     {
-
+        SceneManager.LoadScene(4);
     }
 
     public void Stats()

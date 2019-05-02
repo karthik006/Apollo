@@ -14,18 +14,18 @@ public class LoginScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Login()
     {
-        string user =  username.text.Trim();
+        string user = username.text.Trim();
         string pass = password.text.Trim();
 
         if (user.Length > 5 && pass.Length > 5)
@@ -52,7 +52,7 @@ public class LoginScript : MonoBehaviour
                 }
             }
 
-            if(!flag)
+            if (!flag)
             {
                 message.text = "Incorrect username or password.";
                 username.text = "";
@@ -79,7 +79,7 @@ public class LoginScript : MonoBehaviour
 
             StreamReader inputStream = new StreamReader(path);
 
-            while((line = inputStream.ReadLine()) != null)
+            while ((line = inputStream.ReadLine()) != null)
             {
                 string[] words = line.Split('|');
                 if (words[0] == user)
@@ -94,7 +94,7 @@ public class LoginScript : MonoBehaviour
             if (!flag)
             {
                 StreamWriter outputStream = new StreamWriter(path, true);
-                outputStream.WriteLine(user + "|" + encryptedPass + "\n");
+                outputStream.WriteLine(user + "|" + encryptedPass);
                 outputStream.Close();
 
                 message.text = "User created.";
@@ -104,13 +104,14 @@ public class LoginScript : MonoBehaviour
                 string dataPath = "Assets/Data/data.txt";
                 outputStream = new StreamWriter(dataPath, true);
                 long pos = outputStream.BaseStream.Position;
-                outputStream.WriteLine(user + "|0|0" + "\n");
+                outputStream.WriteLine(user + "|0|0");
                 outputStream.Close();
 
                 string indexPath = "Assets/Data/indexdata.txt";
                 outputStream = new StreamWriter(indexPath, true);
-                outputStream.WriteLine(user + "|" + pos + "\n");
+                outputStream.WriteLine(user + "|" + pos);
                 outputStream.Close();
+                SortIndex();
             }
             else
             {
@@ -121,6 +122,36 @@ public class LoginScript : MonoBehaviour
         {
             message.text = "Minimum 6 chars";
         }
+    }
+
+    void SortIndex()
+    {
+        string indexPath = "Assets/Data/indexdata.txt";
+        StreamReader inputStream = new StreamReader(indexPath);
+        string line;
+        Dictionary<string, string> dict = new Dictionary<string, string>();
+        List<string> l1 = new List<string>();
+
+        while ((line = inputStream.ReadLine()) != null)
+        {
+            string[] words = line.Split('|');
+            Debug.Log(line + " " + words[0]);
+            dict.Add(words[0], words[1]);
+            l1.Add(words[0]);
+        }
+        l1.Sort();
+
+        inputStream.Close();
+
+        StreamWriter outputStream = new StreamWriter(indexPath);
+
+        foreach (string item in l1)
+        {
+            dict.TryGetValue(item, out string pos);
+            outputStream.WriteLine(item + "|" + pos);
+        }
+
+        outputStream.Close();
     }
 
     public string Md5Sum(string strToEncrypt)

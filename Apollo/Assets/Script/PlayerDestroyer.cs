@@ -22,7 +22,7 @@ public class PlayerDestroyer : MonoBehaviour
         {
             //Debug.Log("Time : " + CameraController.incr);
             //Debug.Break();
-            CameraController.playerHealth = 0;
+            CameraController.playerHealth -= 100;
             return;
         }
     }

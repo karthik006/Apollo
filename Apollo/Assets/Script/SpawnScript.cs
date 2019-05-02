@@ -11,6 +11,7 @@ public class SpawnScript : MonoBehaviour
     public Transform[] points;
 
     public GameObject enemy;
+    public GameObject coin;
 
     float dist;
 
@@ -38,6 +39,7 @@ public class SpawnScript : MonoBehaviour
         if (transform.tag == "Spawn1" && (x == 2 || x == 3))
         {
             Instantiate(enemy, points[2].position, Quaternion.identity);
+            Instantiate(coin, points[Random.Range(3, 5)].position, Quaternion.identity);
         }
         else if(transform.tag == "Spawn2")
         {

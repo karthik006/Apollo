@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraController : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class CameraController : MonoBehaviour
     public float speed;
     public static float incr;
     float totalDistance;
+    public static int coins;
 
     public GameObject player;
 
@@ -15,8 +17,9 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         incr = 0;
-        playerHealth = 100;
+        playerHealth = Apollo.PlayerHealth;
         totalDistance = 0;
+        coins = 0;
     }
 
     // Update is called once per frame
@@ -31,12 +34,14 @@ public class CameraController : MonoBehaviour
             speed += 0.5f;
         }
 
-        if(playerHealth == 0)
+        if(playerHealth <= 0)
         {
-            Debug.Log("Score: " + (int)(totalDistance * 100));
+            //Debug.Log("Score: " + (int)(totalDistance * coins));
             Destroy(player);
-            Debug.Break();
-            //return;
+            Apollo.Coins = coins;
+            Apollo.Distance = totalDistance;
+            Apollo.PlayerHealth = 100;
+            SceneManager.LoadScene(3);
         }
     }
 }
