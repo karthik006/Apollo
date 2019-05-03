@@ -72,7 +72,9 @@
     <Compile Include="Assets\Script\ShopKeeper.cs" />
     <Compile Include="Assets\Script\SpawnScript.cs" />
     <Compile Include="Assets\Script\SpikeScript.cs" />
+    <Compile Include="Assets\Script\StatScript.cs" />
     <None Include="Assets\Data\indexdata.txt" />
+    <None Include="Assets\Data\backup.txt" />
     <None Include="Assets\Data\data.txt" />
     <None Include="Assets\Data\login.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">

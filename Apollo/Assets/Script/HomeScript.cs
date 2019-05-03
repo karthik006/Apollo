@@ -11,6 +11,7 @@ public class HomeScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GameOverMaster.CalculateIndex();
         displayName.text = "Welcome, " + Apollo.CurrentUser + "\nScore: " + Apollo.Coins;
     }
 
@@ -32,7 +33,7 @@ public class HomeScript : MonoBehaviour
 
     public void Stats()
     {
-
+        SceneManager.LoadScene(5);
     }
 
     public void ExitButton()

@@ -124,7 +124,7 @@ public class LoginScript : MonoBehaviour
         }
     }
 
-    void SortIndex()
+     public static void SortIndex()
     {
         string indexPath = "Assets/Data/indexdata.txt";
         StreamReader inputStream = new StreamReader(indexPath);

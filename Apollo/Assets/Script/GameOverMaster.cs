@@ -30,7 +30,7 @@ public class GameOverMaster : MonoBehaviour
         while ((line = streamReader.ReadLine()) != null)
         {
             string[] words = line.Split('|');
-            if(words[0] == Apollo.CurrentUser)
+            if (words[0] == Apollo.CurrentUser)
             {
                 pos = Int32.Parse(words[1]);
                 break;
@@ -47,7 +47,7 @@ public class GameOverMaster : MonoBehaviour
         int curCoins = Int32.Parse(word[1]);
         int curDist = Int32.Parse(word[2]);
         coin += curCoins;
-        if(totalScore < curDist)
+        if (totalScore < curDist)
         {
             totalScore = curDist;
             highScore.enabled = false;
@@ -58,17 +58,54 @@ public class GameOverMaster : MonoBehaviour
         }
         inputStream.Close();
 
+        string tempPath = "Assets/Data/temp.txt";
+        StreamWriter outputStream = new StreamWriter(tempPath, false);
         inputStream = new StreamReader(dataPath);
-        string data = inputStream.ReadToEnd();
-        data = data.Replace(Apollo.CurrentUser + "|" + curCoins + "|" + curDist, Apollo.CurrentUser + "|" + coin + "|" + totalScore);
-        inputStream.Close();
+        //string data = inputStream.ReadToEnd();
+        //data = data.Replace(Apollo.CurrentUser + "|" + curCoins + "|" + curDist + "*", Apollo.CurrentUser + "|" + coin + "|" + totalScore + "*");
+        while ((line = inputStream.ReadLine()) != null)
+        {
+            string[] words = line.Split('|');
+            if (words[0] == Apollo.CurrentUser)
+            {
+                outputStream.WriteLine(Apollo.CurrentUser + "|" + coin + "|" + totalScore);
+            }
+            else
+            {
+                outputStream.WriteLine(line);
+            }
+        }
 
-        StreamWriter outputStream = new StreamWriter(dataPath, false);
-        outputStream.Write(data);
+        inputStream.Close();
         outputStream.Close();
+
+        File.Delete(dataPath);
+        File.Move(tempPath, dataPath);
+
+        CalculateIndex();
     }
 
+    public static void CalculateIndex()
+    {
+        string dataPath = "Assets/Data/data.txt";
+        StreamReader inputStream = new StreamReader(dataPath);
+        string indexPath = "Assets/Data/indexdata.txt";
+        StreamWriter streamWriter = new StreamWriter(indexPath);
+        string line;
+        long pos = inputStream.BaseStream.Position;
 
+        while ((line = inputStream.ReadLine()) != null)
+        {
+            string[] words = line.Split('|');
+            streamWriter.WriteLine(words[0] + "|" + pos);
+            pos = inputStream.BaseStream.Position;
+        }
+
+        inputStream.Close();
+        streamWriter.Close();
+
+        LoginScript.SortIndex();
+    }
 
     // Update is called once per frame
     void Update()
