@@ -12,7 +12,7 @@ public class HomeScript : MonoBehaviour
     void Start()
     {
         GameOverMaster.CalculateIndex();
-        displayName.text = "Welcome, " + Apollo.CurrentUser + "\nScore: " + Apollo.Coins;
+        displayName.text = "Welcome, " + Apollo.CurrentUser;
     }
 
     // Update is called once per frame

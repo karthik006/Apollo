@@ -42,7 +42,12 @@ public class GameOverMaster : MonoBehaviour
         string dataPath = "Assets/Data/data.txt";
         StreamReader inputStream = new StreamReader(dataPath);
         inputStream.BaseStream.Seek(pos, SeekOrigin.Begin);
+        Debug.Log(inputStream.BaseStream.Position);
         line = inputStream.ReadLine();
+        Debug.Log("Line1: " + line);
+        if (string.IsNullOrEmpty(line))
+            line = inputStream.ReadLine();
+        Debug.Log("Line2: " + line);
         string[] word = line.Split('|');
         int curCoins = Int32.Parse(word[1]);
         int curDist = Int32.Parse(word[2]);
@@ -92,13 +97,15 @@ public class GameOverMaster : MonoBehaviour
         string indexPath = "Assets/Data/indexdata.txt";
         StreamWriter streamWriter = new StreamWriter(indexPath);
         string line;
-        long pos = inputStream.BaseStream.Position;
+        //inputStream.DiscardBufferedData();
+        long pos = 0;
 
         while ((line = inputStream.ReadLine()) != null)
         {
             string[] words = line.Split('|');
             streamWriter.WriteLine(words[0] + "|" + pos);
-            pos = inputStream.BaseStream.Position;
+            pos += line.Length;
+            //pos = inputStream.BaseStream.Position;
         }
 
         inputStream.Close();

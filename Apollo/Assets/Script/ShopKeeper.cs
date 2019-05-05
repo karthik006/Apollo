@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ShopKeeper : MonoBehaviour
 {
@@ -14,5 +15,10 @@ public class ShopKeeper : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void BaackToHome()
+    {
+        SceneManager.LoadScene(1);
     }
 }

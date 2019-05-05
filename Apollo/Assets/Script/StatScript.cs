@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StatScript : MonoBehaviour
 {
@@ -38,7 +39,7 @@ public class StatScript : MonoBehaviour
         }
 
         Sort(arr);
-        Debug.Log(arr[0] + arr[1]);
+        Debug.Log(arr[0] + "x" + arr[1]);
 
         string data = "";
         foreach(int x in arr)
@@ -48,7 +49,7 @@ public class StatScript : MonoBehaviour
                        select entry.Key;
 
             foreach (var key in keys)
-                data += key + "\tScore: " + x + "\n";
+                data = key + "\nScore: " + x + "\n\n" + data;
         }
 
         stats.text = data;
@@ -58,6 +59,11 @@ public class StatScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void BaackToHome()
+    {
+        SceneManager.LoadScene(1);
     }
 
     void Sort(int[] arr)
