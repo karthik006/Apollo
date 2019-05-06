@@ -73,6 +73,7 @@
     <Compile Include="Assets\Script\SpawnScript.cs" />
     <Compile Include="Assets\Script\SpikeScript.cs" />
     <Compile Include="Assets\Script\StatScript.cs" />
+    <None Include="Assets\Data\shop.txt" />
     <None Include="Assets\Data\indexdata.txt" />
     <None Include="Assets\Data\backup.txt" />
     <None Include="Assets\Data\data.txt" />

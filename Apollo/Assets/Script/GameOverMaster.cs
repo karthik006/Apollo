@@ -104,7 +104,7 @@ public class GameOverMaster : MonoBehaviour
         {
             string[] words = line.Split('|');
             streamWriter.WriteLine(words[0] + "|" + pos);
-            pos += line.Length;
+            pos += line.Length + 2;
             //pos = inputStream.BaseStream.Position;
         }
 
