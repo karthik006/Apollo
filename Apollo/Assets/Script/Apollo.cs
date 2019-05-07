@@ -7,7 +7,6 @@ public static class Apollo
     private static string currentUser;
     private static int coins;
     private static float distance;
-    private static int playerHealth = 100;
 
     public static string CurrentUser
     {
@@ -26,11 +25,5 @@ public static class Apollo
     {
         get => distance;
         set => distance = value;
-    }
-
-    public static int PlayerHealth
-    {
-        get => playerHealth;
-        set => playerHealth = value;
     }
 }

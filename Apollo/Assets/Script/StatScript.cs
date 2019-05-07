@@ -39,7 +39,7 @@ public class StatScript : MonoBehaviour
         }
 
         Sort(arr);
-        Debug.Log(arr[0] + "x" + arr[1]);
+        //Debug.Log(arr[0] + "x" + arr[1]);
 
         string data = "";
         foreach(int x in arr)

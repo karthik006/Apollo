@@ -135,7 +135,7 @@ public class LoginScript : MonoBehaviour
         while ((line = inputStream.ReadLine()) != null)
         {
             string[] words = line.Split('|');
-            Debug.Log(line + " " + words[0]);
+            //Debug.Log(line + " " + words[0]);
             dict.Add(words[0], words[1]);
             l1.Add(words[0]);
         }

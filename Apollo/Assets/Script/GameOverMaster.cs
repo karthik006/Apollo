@@ -42,9 +42,9 @@ public class GameOverMaster : MonoBehaviour
         string dataPath = "Assets/Data/data.txt";
         StreamReader inputStream = new StreamReader(dataPath);
         inputStream.BaseStream.Seek(pos, SeekOrigin.Begin);
-        Debug.Log(inputStream.BaseStream.Position);
+        //Debug.Log(inputStream.BaseStream.Position);
         line = inputStream.ReadLine();
-        Debug.Log("Line1: " + line);
+        //Debug.Log("Line1: " + line);
         if (string.IsNullOrEmpty(line))
             line = inputStream.ReadLine();
         Debug.Log("Line2: " + line);
