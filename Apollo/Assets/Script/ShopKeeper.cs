@@ -13,12 +13,17 @@ public class ShopKeeper : MonoBehaviour
     public Text message;
     public Text coins;
 
+    public GameObject panel;
+    Text textMessage;
+
     int curCoins;
     bool isExist;
 
     // Start is called before the first frame update
     void Start()
     {
+        textMessage = panel.GetComponentInChildren<Text>(true);
+        panel.SetActive(false);
         string indexPath = "Assets/Data/indexdata.txt";
         StreamReader indexReader = new StreamReader(indexPath);
         string line;
@@ -146,19 +151,26 @@ public class ShopKeeper : MonoBehaviour
                 outStream.WriteLine(Apollo.CurrentUser + "|" + name);
                 outStream.Close();
 
-                bool val = EditorUtility.DisplayDialog(name + " upgrade", msg, "Cool!");
-
-                if(val)
-                    SceneManager.LoadScene(1);
+                panel.SetActive(true);
+                textMessage.text = msg;
             }
             else
             {
-                EditorUtility.DisplayDialog("Note", "You don't have enough coins. :(", "Cool!");
+                panel.SetActive(true);
+                textMessage.text = "You don't have enough coins. :(";
             }
         }
         else
         {
-            EditorUtility.DisplayDialog("Note", "You already have upgrades.", "Oh!");
+            panel.SetActive(true);
+            textMessage.text = "You already have upgrades.";
         }
+    }
+
+    public void PanelButton()
+    {
+        panel.SetActive(false);
+        if(textMessage.text.StartsWith("You will"))
+            SceneManager.LoadScene(1);
     }
 }
