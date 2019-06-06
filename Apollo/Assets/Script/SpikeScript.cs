@@ -45,5 +45,6 @@ public class SpikeScript : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         CameraController.playerHealth -= 100;
+        Destroy(gameObject);
     }
 }

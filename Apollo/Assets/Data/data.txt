@@ -1,5 +1,5 @@
-karthik|11|412
-keshav|5|63
-krishna|2|419
-apollo|1|18
+karthik|19|439
+keshav|9|344
+krishna|7|419
+apollo|2|141
 karan350|3|163
