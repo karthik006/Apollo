@@ -4,7 +4,7 @@ Apollo is an endless 2D platformer with unique mechanics.
 
 Switch between colors to see different objects and obstacles and get a high score.
 
-Colors and their functionalities:
-Yellow – Can see coins
-Red – Can see traps
-Blue – Can double jump
+Colors and their functionalities:  
+Yellow â€“ Can see coins  
+Red â€“ Can see traps  
+Blue â€“ Can double jump  
