@@ -36,6 +36,11 @@ public class HomeScript : MonoBehaviour
         SceneManager.LoadScene(5);
     }
 
+    public void About()
+    {
+        SceneManager.LoadScene(6);
+    }
+
     public void ExitButton()
     {
         Application.Quit();
