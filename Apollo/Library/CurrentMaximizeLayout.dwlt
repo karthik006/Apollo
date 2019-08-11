@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 498}
   m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 4700
+  controlID: 8186
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 498}
   m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 4555
+  controlID: 8187
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,7 +154,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 4534
+  controlID: 8188
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -212,7 +212,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cd7ffff6ed7ffff80d8ffff32d9ffff8ee5ffffccedffffdeedffff6ef2ffffee370000083f0000
+      m_ExpandedIDs: 74a7ffff82a9ffff94a9ffffc2aaffffc8aaffffceaaffffd4aaffff08abffff0eabffff16abffffb8b1ffff14b3ffff4eb5ffffbebaffffbcbbffff1cd7ffff6ed7ffff80d8ffff32d9ffff8ee5ffffccedffffdeedffff6ef2ffffee370000083f00000a460000c446000016490000da49000032510000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -478,19 +478,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Prefabs
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Prefabs
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Programs\Unity\Projects\Apollo\Apollo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 34310000
-    m_LastClickedID: 12596
+    m_SelectedIDs: f42f0000
+    m_LastClickedID: 12276
     m_ExpandedIDs: 00000000502f000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -544,10 +544,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 22d7ffff
-    m_LastClickedInstanceID: -10462
+    m_SelectedInstanceIDs: e6a6ffff
+    m_LastClickedInstanceID: -22810
     m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000e03500000e3300009c2a00002a2f0000002f00001e280000c4270000d22b0000da2a00007645000000000000
+    m_ExpandedInstanceIDs: c6230000e03500000e3300009c2a00002a2f0000002f00001e280000c4270000d22b0000da2a000076450000000000003c530000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -624,7 +624,7 @@ MonoBehaviour:
   m_MinSize: {x: 277, y: 318}
   m_MaxSize: {x: 4002, y: 8048}
   vertical: 1
-  controlID: 4701
+  controlID: 8118
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
