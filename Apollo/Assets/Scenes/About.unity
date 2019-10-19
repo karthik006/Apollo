@@ -502,12 +502,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Apollo is an endless 2D platformer with unique mechanics.\r \n\r\nInstructions:\nSwitch
+  m_Text: "Apollo is an endless 2D platformer with unique mechanics.\r \n\nYou need
+    to collect a minimum of ONE coin and last as long as you can to get a score.\nCollecting
+    zero coins will result in a score of 0 even if you travelled a long distance.
+    \nThe more coins you collect, the higher your score.\n\r\nInstructions:\nSwitch
     between colors to see different objects and obstacles and get a high score.\r\n\r\nColors
     and their functionalities:\r\nYellow \u2013 Can see coins\r\nRed \u2013 Can see
-    traps\r\nBlue \u2013 Can double jump\n\n\nMade by 2> . If you have any feedback,
-    questions, concerns, suggestions, leave us a review or email us at: twogreaterthan2gt@gmail.com\n\nThank
-    you for trying the game.\n\nEnjoy!"
+    traps\r\nBlue \u2013 Can double jump\n\nControls:\nMove with a,d and jump with
+    space. \nUse numbers above the 'w' key to switch colors.\n1 - Yellow\n2 - Red\n3
+    - Blue \n\n\nMade by 2> . If you have any feedback, questions, concerns, suggestions,
+    leave us a review or email us at: twogreaterthan2gt@gmail.com\n\nThank you for
+    trying the game.\n\nEnjoy!"
 --- !u!222 &591613500
 CanvasRenderer:
   m_ObjectHideFlags: 0
