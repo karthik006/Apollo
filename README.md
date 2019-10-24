@@ -8,3 +8,6 @@ Colors and their functionalities:
 Yellow – Can see coins  
 Red – Can see traps  
 Blue – Can double jump  
+
+Download and try the game:  
+https://karthik006.itch.io/apollo
